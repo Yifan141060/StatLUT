@@ -68,7 +68,7 @@
 <section>
   <div class="container">
     <div class="figure-block">
-      <img src="assets/img/pipeline.jpg" alt="Overview of the StatLUT framework: multimodal input, features representation, LUT prediction, and rendering" data-lightbox>
+      <img src="assets/img/pipeline.png" alt="Overview of the StatLUT framework: multimodal input, features representation, LUT prediction, and rendering" data-lightbox>
       <p class="figure-caption">
         <b>Overview of the StatLUT framework.</b> Given a content image and either a style reference
         or text description, StatLUT extracts spatially-agnostic statistical features and predicts
@@ -113,7 +113,7 @@
     <h2 class="section-title">Method</h2>
 
     <div class="figure-block">
-      <img src="assets/img/pipeline.jpg" alt="Overview of the StatLUT pipeline" data-lightbox>
+      <img src="assets/img/pipeline.png" alt="Overview of the StatLUT pipeline" data-lightbox>
       <p class="figure-caption">
         <b>Overview of the StatLUT framework.</b> The framework consists of three key components:
         (1) Lab-Extractor for spatially-agnostic statistical feature extraction, (2) MR-Mapper
@@ -143,13 +143,23 @@
       </div>
     </div>
 
-    <h3 class="sub-title">Training &amp; Inference</h3>
+    <h3 class="sub-title">Key Modules</h3>
+
     <div class="figure-block">
-      <img src="assets/img/train_infer.jpg" alt="StatLUT training and inference pipeline" data-lightbox>
+      <img src="assets/img/lab-extractor.png" alt="Lab-Extractor module" data-lightbox>
       <p class="figure-caption">
-        The training pipeline optimizes the MR-Mapper for accurate 3D LUT prediction while ensuring
-        topological smoothness. During inference, StatLUT supports both image-reference and
-        text-driven color grading modes.
+        <b>Lab-Extractor.</b> Extracts spatially-agnostic statistical features from the Lab color
+        space, decoupling color distributions from structural semantics to ensure artifact-free
+        rendering.
+      </p>
+    </div>
+
+    <div class="figure-block">
+      <img src="assets/img/mr-mapper.png" alt="MR-Mapper module" data-lightbox>
+      <p class="figure-caption">
+        <b>MR-Mapper (Multi-dimensional Residual Mapper).</b> Formulates LUT generation as a
+        Transformer-based Seq2Seq translation task, predicting topologically smooth 3D LUTs with
+        proper color gamut topology preservation.
       </p>
     </div>
   </div>
