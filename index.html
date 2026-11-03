@@ -170,14 +170,61 @@
   <div class="container">
     <h2 class="section-title">Quantitative Results</h2>
     <p class="text" style="text-align:center; max-width:860px; margin:0 auto 8px;">
-      Comparison with state-of-the-art photorealistic style transfer methods.
-      StatLUT achieves superior visual quality and quantitative metrics.
+      Comparison with state-of-the-art photorealistic style transfer methods on NAS and PST50 datasets.
+      <b>StatLUT (Img)</b> achieves the shortest distance to the ideal point, indicating an optimal
+      balance between content preservation and style transfer.
     </p>
 
-    <!-- TODO: Replace with your actual results table -->
-    <p class="text" style="text-align:center; color: var(--muted); padding: 40px 0;">
-      <i>Results tables coming soon...</i>
+    <div class="tabs" id="table-tabs" role="tablist">
+      <button class="tab-btn active" data-tab="tbl-nas" role="tab">NAS</button>
+      <button class="tab-btn" data-tab="tbl-pst50" role="tab">PST50</button>
+    </div>
+
+    <div class="table-wrap">
+      <!-- NAS -->
+      <div class="tab-panel active" id="tbl-nas">
+        <table class="results">
+          <thead>
+            <tr><th>Metric</th><th>PhotoNAS</th><th>NLUT</th><th>Neural Preset</th><th>D-LUT</th><th>SA-LUT</th><th>DLUT-VCG</th><th>StatLUT (Img)</th><th>StatLUT (Text)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Content Sim. ↑</td><td>0.477</td><td>0.640</td><td class="best">0.709</td><td>0.700</td><td>0.696</td><td>0.629</td><td class="second">0.707</td><td>0.688</td></tr>
+            <tr><td>Style Sim. ↑</td><td>0.557</td><td class="best">0.787</td><td>0.656</td><td>0.562</td><td>0.426</td><td>0.676</td><td class="second">0.746</td><td>0.498</td></tr>
+            <tr class="ours"><td>Dist. to Ideal ↓</td><td>0.681</td><td class="second">0.400</td><td>0.448</td><td>0.517</td><td>0.598</td><td>0.491</td><td class="best">0.386</td><td>0.565</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- PST50 -->
+      <div class="tab-panel" id="tbl-pst50">
+        <table class="results">
+          <thead>
+            <tr><th>Metric</th><th>PhotoNAS</th><th>NLUT</th><th>Neural Preset</th><th>D-LUT</th><th>SA-LUT</th><th>DLUT-VCG</th><th>StatLUT (Img)</th><th>StatLUT (Text)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Content Sim. ↑</td><td>—</td><td>0.746</td><td class="best">0.774</td><td>0.734</td><td>0.729</td><td>0.713</td><td class="second">0.760</td><td>0.757</td></tr>
+            <tr><td>Style Sim. ↑</td><td>—</td><td class="second">0.849</td><td>0.738</td><td>0.467</td><td>0.650</td><td>0.549</td><td class="best">0.870</td><td>0.536</td></tr>
+            <tr class="ours"><td>Dist. to Ideal ↓</td><td>—</td><td class="second">0.284</td><td>0.345</td><td>0.544</td><td>0.438</td><td>0.514</td><td class="best">0.259</td><td>0.487</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p class="legend">
+      <span class="best">Red</span> / <span class="second">blue</span>: best / second-best
+      image-driven results. PhotoNAS results are not available on PST50.
     </p>
+
+    <h3 class="sub-title">Distance to Ideal Point</h3>
+    <div class="figure-block">
+      <img src="assets/img/Quantitative Results.png" alt="Distance to ideal point visualization" data-lightbox>
+      <p class="figure-caption">
+        Scatter plots showing the trade-off between Content Similarity and Style Similarity on
+        (a) NAS and (b) PST50. The ideal point (1, 1) represents perfect content preservation
+        and style transfer. <b>StatLUT (Img)</b> achieves the shortest distance to the ideal
+        point among all methods.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -186,16 +233,21 @@
   <div class="container">
     <h2 class="section-title">Qualitative Results</h2>
 
-    <!-- TODO: Replace with your actual qualitative results -->
     <div class="figure-block">
-      <img src="assets/img/visual.jpg" alt="Qualitative comparison of StatLUT" data-lightbox>
+      <img src="assets/img/nas compares.png" alt="NAS qualitative comparison" data-lightbox>
       <p class="figure-caption">
-        Qualitative comparison with state-of-the-art photorealistic style transfer methods.
-        StatLUT produces more natural color grading with better structural preservation.
+        <b>Qualitative comparison on NAS dataset.</b> StatLUT produces more natural color grading
+        with better structural preservation compared to existing photorealistic style transfer methods.
       </p>
     </div>
 
-    <!-- TODO: Add gallery carousel for more visual comparisons -->
+    <div class="figure-block">
+      <img src="assets/img/pst compares.png" alt="PST50 qualitative comparison" data-lightbox>
+      <p class="figure-caption">
+        <b>Qualitative comparison on PST50 dataset.</b> StatLUT (Img) achieves superior visual
+        quality by effectively decoupling color distributions from structural semantics.
+      </p>
+    </div>
   </div>
 </section>
 
