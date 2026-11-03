@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StatLUT: Statistical Feature-Driven Multimodal 3DLUT Generation for Photorealistic Style Transfer</title>
+
+  <meta name="description" content="StatLUT: A multimodal framework for 3D LUT generation that decouples color distributions from structural semantics, enabling photorealistic style transfer with text-driven control. NeurIPS 2026.">
+  <meta property="og:title" content="StatLUT: Statistical Feature-Driven Multimodal 3DLUT Generation for Photorealistic Style Transfer">
+  <meta property="og:description" content="Multimodal 3D LUT generation for photorealistic style transfer with text-driven color grading control.">
+  <meta property="og:image" content="assets/img/teaser.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="StatLUT: Statistical Feature-Driven Multimodal 3DLUT Generation for Photorealistic Style Transfer">
+  <meta name="twitter:description" content="Multimodal 3D LUT generation for photorealistic style transfer. NeurIPS 2026.">
+  <meta name="twitter:image" content="assets/img/teaser.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%8D%3C/text%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ============================= Header ============================= -->
+<header class="hero">
+  <div class="container">
+    <div class="venue-strip">
+      <span class="badge accent"><img class="badge-logo" src="assets/img/neurips-logo.svg" alt="NeurIPS logo"> NeurIPS 2026</span>
+    </div>
+
+    <h1 class="title">StatLUT: Statistical Feature-Driven Multimodal 3DLUT Generation for Photorealistic Style Transfer</h1>
+
+    <p class="authors">
+      <span class="author">Yifan Wang<sup>1</sup></span> &nbsp;
+      <span class="author">Zhixiang Hao<sup>1</sup></span> &nbsp;
+      <span class="author">Yu Wang<sup>1</sup></span> &nbsp;
+      <span class="author">Congchao Zhu<sup>1,<span class="corr">✉</span></sup></span>
+    </p>
+
+    <p class="affiliations">
+      <sup>1</sup> <a class="affil-link" href="https://www.honor.com/global/" target="_blank" rel="noopener"><img class="affil-logo" src="assets/img/honor-logo-black.svg" alt="Honor logo"> Honor Device Co., Ltd</a>
+    </p>
+
+    <p class="correspondence"><svg class="mail-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Corresponding author</p>
+
+    <div class="link-buttons">
+      <a class="button" href="https://arxiv.org/abs/2607.08227" target="_blank" rel="noopener" aria-label="arXiv paper">
+        <svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6V2zm8 1.5V8h4.5L14 3.5zM8 12h8v1.6H8V12zm0 3.2h8v1.6H8v-1.6zM8 18.4h5.4V20H8v-1.6z"/></svg>
+        arXiv
+      </a>
+      <a class="button" href="#" aria-label="Paper">
+        <svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6V2zm8 1.5V8h4.5L14 3.5zM8 12h8v1.6H8V12zm0 3.2h8v1.6H8v-1.6zM8 18.4h5.4V20H8v-1.6z"/></svg>
+        Paper
+      </a>
+      <a class="button" href="#" aria-label="Code">
+        <svg viewBox="0 0 24 24"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg>
+        Code
+      </a>
+      <a class="button" href="#bibtex">
+        <svg viewBox="0 0 24 24"><path d="M4 3h13l3 3v15H4V3zm2 2v14h12V7h-3V5H6zm2 4h8v1.6H8V9zm0 3.2h8v1.6H8v-1.6zM8 15.4h5.4V17H8v-1.6z"/></svg>
+        BibTeX
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================= Teaser ============================= -->
+<section>
+  <div class="container">
+    <div class="figure-block">
+      <img src="assets/img/teaser.jpg" alt="Teaser figure of StatLUT: multimodal 3D LUT generation for photorealistic style transfer" data-lightbox>
+      <p class="figure-caption">
+        <b>StatLUT</b> is a multimodal framework for 3D LUT generation that decouples color distributions
+        from structural semantics via statistical features, enabling photorealistic style transfer
+        with both image reference and text-driven control.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= Abstract ============================= -->
+<section class="alt" id="abstract">
+  <div class="container">
+    <h2 class="section-title">Abstract</h2>
+    <p class="text">
+      Photorealistic Style Transfer (PST) aims to transfer the color and tonal style of a reference
+      to a content image while strictly preserving its structural integrity. However, existing
+      deep learning-based methods inherently suffer from semantic entanglement caused by pre-trained
+      image encoders, leading to unnatural spatial distortions. Moreover, current pixel-level mapping
+      paradigms often ignore color gamut topology, resulting in color banding, while also lacking
+      the multimodal capability for precise, tone-specific text-driven control.
+    </p>
+    <p class="text">
+      To address these bottlenecks, we propose <b>StatLUT</b>, an innovative multimodal framework
+      for 3D LUT generation. First, we bypass traditional encoders and introduce a <b>Lab-Extractor</b>
+      to derive spatially-agnostic statistical features, fundamentally decoupling color distributions
+      from structural semantics to ensure artifact-free rendering. Second, we formulate LUT generation
+      as a Transformer-based Seq2Seq translation task, utilizing a <b>Multi-dimensional Residual
+      Mapper (MR-Mapper)</b> to predict topologically smooth 3D LUTs. Finally, to break the unimodal
+      barrier, we propose the <b>H-Diffuser</b>, a lightweight Diffusion Transformer that directly
+      synthesizes statistical features from tone-descriptive text prompts, enabling controllable and
+      robust color grading. Extensive experiments on standard benchmarks demonstrate that StatLUT
+      significantly outperforms state-of-the-art methods in both visual quality and quantitative
+      metrics, pioneering a highly robust and versatile paradigm for multimodal photorealistic
+      style transfer.
+    </p>
+  </div>
+</section>
+
+<!-- ============================= Method ============================= -->
+<section id="method">
+  <div class="container">
+    <h2 class="section-title">Method</h2>
+
+    <div class="figure-block">
+      <img src="assets/img/pipeline.jpg" alt="Overview of the StatLUT pipeline" data-lightbox>
+      <p class="figure-caption">
+        <b>Overview of the StatLUT framework.</b> The framework consists of three key components:
+        (1) Lab-Extractor for spatially-agnostic statistical feature extraction, (2) MR-Mapper
+        for Transformer-based 3D LUT prediction, and (3) H-Diffuser for text-driven statistical
+        feature synthesis.
+      </p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h4><span class="num">1</span> Lab-Extractor</h4>
+        <p>Bypasses traditional encoders and derives spatially-agnostic statistical features from
+        the Lab color space, fundamentally decoupling color distributions from structural semantics
+        to ensure artifact-free rendering.</p>
+      </div>
+      <div class="card">
+        <h4><span class="num">2</span> MR-Mapper</h4>
+        <p>Formulates LUT generation as a Transformer-based Seq2Seq translation task, utilizing a
+        Multi-dimensional Residual Mapper to predict topologically smooth 3D LUTs with proper
+        color gamut topology preservation.</p>
+      </div>
+      <div class="card">
+        <h4><span class="num">3</span> H-Diffuser</h4>
+        <p>A lightweight Diffusion Transformer that directly synthesizes statistical features from
+        tone-descriptive text prompts, enabling controllable and robust color grading beyond the
+        unimodal barrier.</p>
+      </div>
+    </div>
+
+    <h3 class="sub-title">Training &amp; Inference</h3>
+    <div class="figure-block">
+      <img src="assets/img/train_infer.jpg" alt="StatLUT training and inference pipeline" data-lightbox>
+      <p class="figure-caption">
+        The training pipeline optimizes the MR-Mapper for accurate 3D LUT prediction while ensuring
+        topological smoothness. During inference, StatLUT supports both image-reference and
+        text-driven color grading modes.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= Quantitative ============================= -->
+<section class="alt" id="results">
+  <div class="container">
+    <h2 class="section-title">Quantitative Results</h2>
+    <p class="text" style="text-align:center; max-width:860px; margin:0 auto 8px;">
+      Comparison with state-of-the-art photorealistic style transfer methods.
+      StatLUT achieves superior visual quality and quantitative metrics.
+    </p>
+
+    <!-- TODO: Replace with your actual results table -->
+    <p class="text" style="text-align:center; color: var(--muted); padding: 40px 0;">
+      <i>Results tables coming soon...</i>
+    </p>
+  </div>
+</section>
+
+<!-- ============================= Qualitative ============================= -->
+<section id="qualitative">
+  <div class="container">
+    <h2 class="section-title">Qualitative Results</h2>
+
+    <!-- TODO: Replace with your actual qualitative results -->
+    <div class="figure-block">
+      <img src="assets/img/visual.jpg" alt="Qualitative comparison of StatLUT" data-lightbox>
+      <p class="figure-caption">
+        Qualitative comparison with state-of-the-art photorealistic style transfer methods.
+        StatLUT produces more natural color grading with better structural preservation.
+      </p>
+    </div>
+
+    <!-- TODO: Add gallery carousel for more visual comparisons -->
+  </div>
+</section>
+
+<!-- ============================= Applications ============================= -->
+<section class="alt" id="applications">
+  <div class="container">
+    <h2 class="section-title">Applications</h2>
+    <p class="text" style="text-align:center; margin-bottom: 24px;">
+      StatLUT enables versatile photorealistic style transfer with both image reference
+      and text-driven color grading control.
+      <i>Drag the slider to compare before and after.</i>
+    </p>
+
+    <!-- TODO: Replace with your actual application examples -->
+    <p class="text" style="text-align:center; color: var(--muted); padding: 40px 0;">
+      <i>Application examples coming soon...</i>
+    </p>
+  </div>
+</section>
+
+<!-- ============================= BibTeX ============================= -->
+<section id="bibtex">
+  <div class="container">
+    <h2 class="section-title">Citation</h2>
+    <div class="bibtex-box">
+      <button class="copy-btn" id="copy-bibtex" type="button">Copy</button>
+      <pre id="bibtex-code">@article{wang2026statlut,
+  title     = {StatLUT: Statistical Feature-Driven Multimodal 3DLUT Generation for Photorealistic Style Transfer},
+  author    = {Wang, Yifan and Hao, Zhixiang and Wang, Yu and Zhu, Congchao},
+  journal   = {NeurIPS},
+  year      = {2026}
+}</pre>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= Footer ============================= -->
+<footer>
+  <div class="container">
+    <p>
+      📮 Contact: <a href="mailto:wyf141060@163.com">wyf141060@163.com</a>
+    </p>
+    <p>
+      Website template inspired by <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+    </p>
+  </div>
+</footer>
+
+<!-- Lightbox overlay -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lb-controls">
+    <button id="lb-zoom-in" type="button" aria-label="Zoom in"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+    <button id="lb-zoom-out" type="button" aria-label="Zoom out"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+    <button id="lb-reset" type="button" aria-label="Reset view"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><polyline points="3 4 3 9 8 9"/></svg></button>
+    <button id="lb-close" type="button" aria-label="Close"><svg viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
+  </div>
+  <img id="lightbox-img" src="" alt="Enlarged figure">
+  <div class="lb-hint">Scroll to zoom · Drag to pan · Double-click to reset · Esc to close</div>
+</div>
+
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
