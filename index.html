@@ -33,8 +33,8 @@
     <p class="authors">
       <span class="author">Yifan Wang<sup>1</sup></span> &nbsp;
       <span class="author">Zhixiang Hao<sup>1</sup></span> &nbsp;
-      <span class="author">Yu Wang<sup>1</sup></span> &nbsp;
-      <span class="author">Congchao Zhu<sup>1,<span class="corr">✉</span></sup></span>
+      <span class="author">Yu Wang<sup>1,<span class="corr">✉</span></sup></span> &nbsp;
+      <span class="author">Congchao Zhu<sup>1</sup></span>
     </p>
 
     <p class="affiliations">
@@ -48,13 +48,9 @@
         <svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6V2zm8 1.5V8h4.5L14 3.5zM8 12h8v1.6H8V12zm0 3.2h8v1.6H8v-1.6zM8 18.4h5.4V20H8v-1.6z"/></svg>
         arXiv
       </a>
-      <a class="button" href="#" aria-label="Paper">
-        <svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6V2zm8 1.5V8h4.5L14 3.5zM8 12h8v1.6H8V12zm0 3.2h8v1.6H8v-1.6zM8 18.4h5.4V20H8v-1.6z"/></svg>
-        Paper
-      </a>
-      <a class="button" href="#" aria-label="Code">
-        <svg viewBox="0 0 24 24"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg>
-        Code
+      <a class="button" href="#datasets" aria-label="Dataset">
+        <svg viewBox="0 0 24 24"><path d="M4 3h13l3 3v15H4V3zm2 2v14h12V7h-3V5H6zm2 4h8v1.6H8V9zm0 3.2h8v1.6H8v-1.6zM8 15.4h5.4V17H8v-1.6z"/></svg>
+        Dataset
       </a>
       <a class="button" href="#bibtex">
         <svg viewBox="0 0 24 24"><path d="M4 3h13l3 3v15H4V3zm2 2v14h12V7h-3V5H6zm2 4h8v1.6H8V9zm0 3.2h8v1.6H8v-1.6zM8 15.4h5.4V17H8v-1.6z"/></svg>
@@ -279,6 +275,199 @@
         across semantically different scenes while preserving structural integrity. The statistical
         feature representation decouples color distributions from content semantics, enabling
         robust style transfer even when content and style images have different semantic layouts.
+      </p>
+    </div>
+
+    <h3 class="sub-title">Video Style Transfer</h3>
+    <p class="text" style="text-align:center; margin-bottom: 18px;">
+      Drag the slider to compare Content (left) and Stylized (right). Click to play/pause.
+    </p>
+
+    <div class="carousel" id="video-carousel">
+      <button class="car-btn prev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24"><polyline points="15 5 8 12 15 19"/></svg></button>
+
+      <!-- Video Slides -->
+      <div class="gallery-item active">
+        <div class="ba-row">
+          <div class="tile">
+            <div class="img-box"><img src="assets/img/video_style/14.jpg" alt="Style 14" data-lightbox></div>
+            <div class="tile-label">Style</div>
+          </div>
+          <div class="ba-slider" style="--pos: 50%; aspect-ratio: 16 / 9;">
+            <video class="ba-after" src="assets/img/video_result/14.mp4" muted loop playsinline preload="metadata"></video>
+            <div class="ba-before-wrap"><video class="ba-before" src="assets/img/video_content/14.mp4" muted loop playsinline preload="metadata"></video></div>
+            <span class="ba-badge left">Content</span>
+            <span class="ba-badge right">Stylized</span>
+            <div class="ba-handle"><div class="ba-grip"><svg viewBox="0 0 24 24"><polyline points="9 6 4 12 9 18"/><polyline points="15 6 20 12 15 18"/></svg></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="ba-row">
+          <div class="tile">
+            <div class="img-box"><img src="assets/img/video_style/17.jpg" alt="Style 17" data-lightbox></div>
+            <div class="tile-label">Style</div>
+          </div>
+          <div class="ba-slider" style="--pos: 50%; aspect-ratio: 16 / 9;">
+            <video class="ba-after" src="assets/img/video_result/17.mp4" muted loop playsinline preload="metadata"></video>
+            <div class="ba-before-wrap"><video class="ba-before" src="assets/img/video_content/17.mp4" muted loop playsinline preload="metadata"></video></div>
+            <span class="ba-badge left">Content</span>
+            <span class="ba-badge right">Stylized</span>
+            <div class="ba-handle"><div class="ba-grip"><svg viewBox="0 0 24 24"><polyline points="9 6 4 12 9 18"/><polyline points="15 6 20 12 15 18"/></svg></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="ba-row">
+          <div class="tile">
+            <div class="img-box"><img src="assets/img/video_style/21.jpg" alt="Style 21" data-lightbox></div>
+            <div class="tile-label">Style</div>
+          </div>
+          <div class="ba-slider" style="--pos: 50%; aspect-ratio: 16 / 9;">
+            <video class="ba-after" src="assets/img/video_result/21.mp4" muted loop playsinline preload="metadata"></video>
+            <div class="ba-before-wrap"><video class="ba-before" src="assets/img/video_content/21.mp4" muted loop playsinline preload="metadata"></video></div>
+            <span class="ba-badge left">Content</span>
+            <span class="ba-badge right">Stylized</span>
+            <div class="ba-handle"><div class="ba-grip"><svg viewBox="0 0 24 24"><polyline points="9 6 4 12 9 18"/><polyline points="15 6 20 12 15 18"/></svg></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="ba-row">
+          <div class="tile">
+            <div class="img-box"><img src="assets/img/video_style/22.jpg" alt="Style 22" data-lightbox></div>
+            <div class="tile-label">Style</div>
+          </div>
+          <div class="ba-slider" style="--pos: 50%; aspect-ratio: 16 / 9;">
+            <video class="ba-after" src="assets/img/video_result/22.mp4" muted loop playsinline preload="metadata"></video>
+            <div class="ba-before-wrap"><video class="ba-before" src="assets/img/video_content/22.mp4" muted loop playsinline preload="metadata"></video></div>
+            <span class="ba-badge left">Content</span>
+            <span class="ba-badge right">Stylized</span>
+            <div class="ba-handle"><div class="ba-grip"><svg viewBox="0 0 24 24"><polyline points="9 6 4 12 9 18"/><polyline points="15 6 20 12 15 18"/></svg></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="ba-row">
+          <div class="tile">
+            <div class="img-box"><img src="assets/img/video_style/27.jpg" alt="Style 27" data-lightbox></div>
+            <div class="tile-label">Style</div>
+          </div>
+          <div class="ba-slider" style="--pos: 50%; aspect-ratio: 16 / 9;">
+            <video class="ba-after" src="assets/img/video_result/27.mp4" muted loop playsinline preload="metadata"></video>
+            <div class="ba-before-wrap"><video class="ba-before" src="assets/img/video_content/27.mp4" muted loop playsinline preload="metadata"></video></div>
+            <span class="ba-badge left">Content</span>
+            <span class="ba-badge right">Stylized</span>
+            <div class="ba-handle"><div class="ba-grip"><svg viewBox="0 0 24 24"><polyline points="9 6 4 12 9 18"/><polyline points="15 6 20 12 15 18"/></svg></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="ba-row">
+          <div class="tile">
+            <div class="img-box"><img src="assets/img/video_style/37.jpg" alt="Style 37" data-lightbox></div>
+            <div class="tile-label">Style</div>
+          </div>
+          <div class="ba-slider" style="--pos: 50%; aspect-ratio: 16 / 9;">
+            <video class="ba-after" src="assets/img/video_result/37.mp4" muted loop playsinline preload="metadata"></video>
+            <div class="ba-before-wrap"><video class="ba-before" src="assets/img/video_content/37.mp4" muted loop playsinline preload="metadata"></video></div>
+            <span class="ba-badge left">Content</span>
+            <span class="ba-badge right">Stylized</span>
+            <div class="ba-handle"><div class="ba-grip"><svg viewBox="0 0 24 24"><polyline points="9 6 4 12 9 18"/><polyline points="15 6 20 12 15 18"/></svg></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="ba-row">
+          <div class="tile">
+            <div class="img-box"><img src="assets/img/video_style/38.jpg" alt="Style 38" data-lightbox></div>
+            <div class="tile-label">Style</div>
+          </div>
+          <div class="ba-slider" style="--pos: 50%; aspect-ratio: 16 / 9;">
+            <video class="ba-after" src="assets/img/video_result/38.mp4" muted loop playsinline preload="metadata"></video>
+            <div class="ba-before-wrap"><video class="ba-before" src="assets/img/video_content/38.mp4" muted loop playsinline preload="metadata"></video></div>
+            <span class="ba-badge left">Content</span>
+            <span class="ba-badge right">Stylized</span>
+            <div class="ba-handle"><div class="ba-grip"><svg viewBox="0 0 24 24"><polyline points="9 6 4 12 9 18"/><polyline points="15 6 20 12 15 18"/></svg></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="ba-row">
+          <div class="tile">
+            <div class="img-box"><img src="assets/img/video_style/39.jpg" alt="Style 39" data-lightbox></div>
+            <div class="tile-label">Style</div>
+          </div>
+          <div class="ba-slider" style="--pos: 50%; aspect-ratio: 16 / 9;">
+            <video class="ba-after" src="assets/img/video_result/39.mp4" muted loop playsinline preload="metadata"></video>
+            <div class="ba-before-wrap"><video class="ba-before" src="assets/img/video_content/39.mp4" muted loop playsinline preload="metadata"></video></div>
+            <span class="ba-badge left">Content</span>
+            <span class="ba-badge right">Stylized</span>
+            <div class="ba-handle"><div class="ba-grip"><svg viewBox="0 0 24 24"><polyline points="9 6 4 12 9 18"/><polyline points="15 6 20 12 15 18"/></svg></div></div>
+          </div>
+        </div>
+      </div>
+
+      <button class="car-btn next" type="button" aria-label="Next"><svg viewBox="0 0 24 24"><polyline points="9 5 16 12 9 19"/></svg></button>
+    </div>
+    <p class="car-counter">Case <b>1</b> / 8</p>
+  </div>
+</section>
+
+<!-- ============================= Ablation Study ============================= -->
+<section id="ablation">
+  <div class="container">
+    <h2 class="section-title">Semantic Interference</h2>
+    <p class="text" style="text-align:center; max-width:860px; margin:0 auto 24px;">
+      To evaluate the impact of semantic structure on style transfer, we shuffle the style image
+      using patches of different sizes (destroying spatial layout while preserving color statistics)
+      and measure the deviation from the baseline PST result (unshuffled style). Larger deviation
+      indicates stronger sensitivity to semantic layout. StatLUT shows minimal deviation across
+      all shuffle levels, demonstrating effective decoupling of color distribution from structural
+      semantics.
+    </p>
+
+    <div class="figure-block">
+      <img src="assets/img/Ablation Shuffle.png" alt="Semantic interference ablation study" data-lightbox>
+      <p class="figure-caption">
+        <b>Semantic interference ablation study.</b> Row 1 (baseline): Content, Style, and PST
+        results from different methods using the original unshuffled style. Rows 2–5: PST results
+        when the style image is shuffled with increasing patch granularity (2×2, 3×3, 4×4, 5×5).
+        Numbers below each result indicate the deviation from the baseline PST result. Larger values
+        indicate greater sensitivity to spatial semantic structure. StatLUT maintains consistently
+        low deviation across all shuffle levels, while other methods show significant degradation
+        as semantic layout is destroyed.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= Datasets & Acknowledgments ============================= -->
+<section class="alt" id="datasets">
+  <div class="container">
+    <h2 class="section-title">Datasets & Acknowledgments</h2>
+
+    <div class="figure-block" style="max-width:700px; margin:0 auto;">
+      <p class="text" style="text-align:left; margin-bottom:16px;">
+        <b>Training:</b> MSCOCO (<a href="https://cocodataset.org/#download" target="_blank" rel="noopener">cocodataset.org</a>)
+      </p>
+      <p class="text" style="text-align:left; margin-bottom:16px;">
+        <b>Testing:</b> PST50 (<a href="https://huggingface.co/datasets/zrgong/PST50" target="_blank" rel="noopener">HuggingFace</a>)
+        and NAS (<a href="https://github.com/pkuanjie/StyleNAS/tree/master/content" target="_blank" rel="noopener">GitHub</a>)
+      </p>
+    </div>
+
+    <div class="figure-block" style="max-width:700px; margin:24px auto 0;">
+      <p class="text" style="text-align:center;">
+        We thank the creators of the PST50 and NAS datasets for making their benchmarks publicly
+        available. This work was supported by Honor Device Co., Ltd.
       </p>
     </div>
   </div>

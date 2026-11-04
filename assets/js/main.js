@@ -355,3 +355,41 @@
     try { document.execCommand('copy'); done(); } catch (e) { /* noop */ }
     document.body.removeChild(ta);
   }
+
+  // ---------- Video BA Slider: sync play/pause + time ----------
+  document.querySelectorAll('.ba-slider').forEach(function (s) {
+    var afterVid = s.querySelector('video.ba-after');
+    var beforeVid = s.querySelector('.ba-before-wrap video.ba-before');
+    if (!afterVid || !beforeVid) return;
+
+    var dragged = false;  // track if user was dragging (to avoid click conflict)
+
+    // Sync play/pause
+    afterVid.addEventListener('play', function () { beforeVid.play(); });
+    afterVid.addEventListener('pause', function () { beforeVid.pause(); });
+    beforeVid.addEventListener('play', function () { afterVid.play(); });
+    beforeVid.addEventListener('pause', function () { afterVid.pause(); });
+
+    // Sync time on seek
+    afterVid.addEventListener('seeked', function () {
+      if (Math.abs(beforeVid.currentTime - afterVid.currentTime) > 0.1) {
+        beforeVid.currentTime = afterVid.currentTime;
+      }
+    });
+    beforeVid.addEventListener('seeked', function () {
+      if (Math.abs(afterVid.currentTime - beforeVid.currentTime) > 0.1) {
+        afterVid.currentTime = beforeVid.currentTime;
+      }
+    });
+
+    // Track drag state
+    s.addEventListener('pointerdown', function () { dragged = false; });
+    s.addEventListener('pointermove', function () { dragged = true; });
+
+    // Click to toggle play/pause (only if not dragging)
+    s.addEventListener('click', function (e) {
+      if (dragged) { dragged = false; return; }
+      if (e.target.closest('.ba-grip') || e.target.closest('.ba-handle')) return;
+      if (afterVid.paused) { afterVid.play(); } else { afterVid.pause(); }
+    });
+  });
