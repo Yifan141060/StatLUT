@@ -25,11 +25,27 @@
     var idx = 0;
     var show = function (i) {
       idx = (i + items.length) % items.length; // wrap around
-      items.forEach(function (it, j) { it.classList.toggle('active', j === idx); });
+      items.forEach(function (it, j) {
+        var isActive = j === idx;
+        it.classList.toggle('active', isActive);
+        // Lazy load videos: only load active slide's videos
+        var videos = it.querySelectorAll('video');
+        videos.forEach(function (v) {
+          if (isActive && v.getAttribute('preload') === 'none') {
+            v.setAttribute('preload', 'metadata');
+            v.load();
+          } else if (!isActive) {
+            v.pause();
+            v.setAttribute('preload', 'none');
+          }
+        });
+      });
       if (counter) counter.innerHTML = 'Case <b>' + (idx + 1) + '</b> / ' + items.length;
     };
     car.querySelector('.prev').addEventListener('click', function () { show(idx - 1); });
     car.querySelector('.next').addEventListener('click', function () { show(idx + 1); });
+    // Load first slide's videos on page load
+    show(0);
   });
 
   // ---------- Before / After comparison sliders (divider + zoom & pan) ----------

@@ -109,7 +109,7 @@
     <h2 class="section-title">Method</h2>
 
     <div class="figure-block">
-      <img src="assets/img/pipeline.png" alt="Overview of the StatLUT pipeline" data-lightbox>
+      <img src="assets/img/pipeline.png" alt="Overview of the StatLUT pipeline" data-lightbox loading="lazy">
       <p class="figure-caption">
         <b>Overview of the StatLUT framework.</b> The framework consists of three key components:
         (1) Lab-Extractor for spatially-agnostic statistical feature extraction, (2) MR-Mapper
@@ -142,7 +142,7 @@
     <h3 class="sub-title">Key Modules</h3>
 
     <div class="figure-block">
-      <img src="assets/img/lab-extractor.png" alt="Lab-Extractor module" data-lightbox>
+      <img src="assets/img/lab-extractor.png" alt="Lab-Extractor module" data-lightbox loading="lazy">
       <p class="figure-caption">
         <b>Lab-Extractor.</b> Extracts spatially-agnostic statistical features from the Lab color
         space, decoupling color distributions from structural semantics to ensure artifact-free
@@ -151,7 +151,7 @@
     </div>
 
     <div class="figure-block">
-      <img src="assets/img/mr-mapper.png" alt="MR-Mapper module" data-lightbox>
+      <img src="assets/img/mr-mapper.png" alt="MR-Mapper module" data-lightbox loading="lazy">
       <p class="figure-caption">
         <b>MR-Mapper (Multi-dimensional Residual Mapper).</b> Formulates LUT generation as a
         Transformer-based Seq2Seq translation task, predicting topologically smooth 3D LUTs with
@@ -213,7 +213,7 @@
 
     <h3 class="sub-title">Distance to Ideal Point</h3>
     <div class="figure-block">
-      <img src="assets/img/Quantitative Results.png" alt="Distance to ideal point visualization" data-lightbox>
+      <img src="assets/img/Quantitative Results.png" alt="Distance to ideal point visualization" data-lightbox loading="lazy">
       <p class="figure-caption">
         Scatter plots showing the trade-off between Content Similarity and Style Similarity on
         (a) NAS and (b) PST50. The ideal point (1, 1) represents perfect content preservation
@@ -230,7 +230,7 @@
     <h2 class="section-title">Qualitative Results</h2>
 
     <div class="figure-block">
-      <img src="assets/img/nas compares.png" alt="NAS qualitative comparison" data-lightbox>
+      <img src="assets/img/nas compares.png" alt="NAS qualitative comparison" data-lightbox loading="lazy">
       <p class="figure-caption">
         <b>Qualitative comparison on NAS dataset.</b> StatLUT produces more natural color grading
         with better structural preservation compared to existing photorealistic style transfer methods.
@@ -238,7 +238,7 @@
     </div>
 
     <div class="figure-block">
-      <img src="assets/img/pst compares.png" alt="PST50 qualitative comparison" data-lightbox>
+      <img src="assets/img/pst compares.png" alt="PST50 qualitative comparison" data-lightbox loading="lazy">
       <p class="figure-caption">
         <b>Qualitative comparison on PST50 dataset.</b> StatLUT (Img) achieves superior visual
         quality by effectively decoupling color distributions from structural semantics.
@@ -258,7 +258,7 @@
 
     <h3 class="sub-title">Multimodal-Driven PST</h3>
     <div class="figure-block">
-      <img src="assets/img/Multimodal PST.png" alt="Multimodal PST results" data-lightbox>
+      <img src="assets/img/Multimodal PST.png" alt="Multimodal PST results" data-lightbox loading="lazy">
       <p class="figure-caption">
         <b>Multimodal-driven photorealistic style transfer.</b> StatLUT supports both image-reference
         and text-driven modes. Given a content image, users can either provide a style reference
@@ -269,7 +269,7 @@
 
     <h3 class="sub-title">Cross-Semantic Style Transfer</h3>
     <div class="figure-block">
-      <img src="assets/img/Cross-Semantic Results.png" alt="Cross-semantic PST results" data-lightbox>
+      <img src="assets/img/Cross-Semantic Results.png" alt="Cross-semantic PST results" data-lightbox loading="lazy">
       <p class="figure-caption">
         <b>Cross-semantic photorealistic style transfer.</b> StatLUT effectively transfers style
         across semantically different scenes while preserving structural integrity. The statistical
@@ -290,12 +290,12 @@
       <div class="gallery-item active">
         <div class="ba-row">
           <div class="tile">
-            <div class="img-box"><img src="assets/img/video_style/14.jpg" alt="Style 14" data-lightbox></div>
+            <div class="img-box"><img src="assets/img/video_style/14.jpg" alt="Style 14" data-lightbox loading="lazy"></div>
             <div class="tile-label">Style</div>
           </div>
           <div class="ba-slider" style="--pos: 15%; aspect-ratio: 16 / 9;">
-            <video class="ba-after" src="assets/img/video_content/14.mp4" muted loop playsinline preload="metadata"></video>
-            <div class="ba-before-wrap"><video class="ba-before" src="assets/img/video_result/14.mp4" muted loop playsinline preload="metadata"></video></div>
+            <video class="ba-after" src="assets/img/video_content/14.mp4" muted loop playsinline preload="none"></video>
+            <div class="ba-before-wrap"><video class="ba-before" src="assets/img/video_result/14.mp4" muted loop playsinline preload="none"></video></div>
             <span class="ba-badge left">Stylized</span>
             <span class="ba-badge right">Content</span>
             <div class="ba-handle"><div class="ba-grip"><svg viewBox="0 0 24 24"><polyline points="9 6 4 12 9 18"/><polyline points="15 6 20 12 15 18"/></svg></div></div>
@@ -306,12 +306,12 @@
       <div class="gallery-item">
         <div class="ba-row">
           <div class="tile">
-            <div class="img-box"><img src="assets/img/video_style/17.jpg" alt="Style 17" data-lightbox></div>
+            <div class="img-box"><img src="assets/img/video_style/17.jpg" alt="Style 17" data-lightbox loading="lazy"></div>
             <div class="tile-label">Style</div>
           </div>
           <div class="ba-slider" style="--pos: 15%; aspect-ratio: 16 / 9;">
-            <video class="ba-after" src="assets/img/video_content/17.mp4" muted loop playsinline preload="metadata"></video>
-            <div class="ba-before-wrap"><video class="ba-before" src="assets/img/video_result/17.mp4" muted loop playsinline preload="metadata"></video></div>
+            <video class="ba-after" src="assets/img/video_content/17.mp4" muted loop playsinline preload="none"></video>
+            <div class="ba-before-wrap"><video class="ba-before" src="assets/img/video_result/17.mp4" muted loop playsinline preload="none"></video></div>
             <span class="ba-badge left">Stylized</span>
             <span class="ba-badge right">Content</span>
             <div class="ba-handle"><div class="ba-grip"><svg viewBox="0 0 24 24"><polyline points="9 6 4 12 9 18"/><polyline points="15 6 20 12 15 18"/></svg></div></div>
@@ -322,12 +322,12 @@
       <div class="gallery-item">
         <div class="ba-row">
           <div class="tile">
-            <div class="img-box"><img src="assets/img/video_style/21.jpg" alt="Style 21" data-lightbox></div>
+            <div class="img-box"><img src="assets/img/video_style/21.jpg" alt="Style 21" data-lightbox loading="lazy"></div>
             <div class="tile-label">Style</div>
           </div>
           <div class="ba-slider" style="--pos: 15%; aspect-ratio: 16 / 9;">
-            <video class="ba-after" src="assets/img/video_content/21.mp4" muted loop playsinline preload="metadata"></video>
-            <div class="ba-before-wrap"><video class="ba-before" src="assets/img/video_result/21.mp4" muted loop playsinline preload="metadata"></video></div>
+            <video class="ba-after" src="assets/img/video_content/21.mp4" muted loop playsinline preload="none"></video>
+            <div class="ba-before-wrap"><video class="ba-before" src="assets/img/video_result/21.mp4" muted loop playsinline preload="none"></video></div>
             <span class="ba-badge left">Stylized</span>
             <span class="ba-badge right">Content</span>
             <div class="ba-handle"><div class="ba-grip"><svg viewBox="0 0 24 24"><polyline points="9 6 4 12 9 18"/><polyline points="15 6 20 12 15 18"/></svg></div></div>
@@ -338,12 +338,12 @@
       <div class="gallery-item">
         <div class="ba-row">
           <div class="tile">
-            <div class="img-box"><img src="assets/img/video_style/22.jpg" alt="Style 22" data-lightbox></div>
+            <div class="img-box"><img src="assets/img/video_style/22.jpg" alt="Style 22" data-lightbox loading="lazy"></div>
             <div class="tile-label">Style</div>
           </div>
           <div class="ba-slider" style="--pos: 15%; aspect-ratio: 16 / 9;">
-            <video class="ba-after" src="assets/img/video_content/22.mp4" muted loop playsinline preload="metadata"></video>
-            <div class="ba-before-wrap"><video class="ba-before" src="assets/img/video_result/22.mp4" muted loop playsinline preload="metadata"></video></div>
+            <video class="ba-after" src="assets/img/video_content/22.mp4" muted loop playsinline preload="none"></video>
+            <div class="ba-before-wrap"><video class="ba-before" src="assets/img/video_result/22.mp4" muted loop playsinline preload="none"></video></div>
             <span class="ba-badge left">Stylized</span>
             <span class="ba-badge right">Content</span>
             <div class="ba-handle"><div class="ba-grip"><svg viewBox="0 0 24 24"><polyline points="9 6 4 12 9 18"/><polyline points="15 6 20 12 15 18"/></svg></div></div>
@@ -354,12 +354,12 @@
       <div class="gallery-item">
         <div class="ba-row">
           <div class="tile">
-            <div class="img-box"><img src="assets/img/video_style/27.jpg" alt="Style 27" data-lightbox></div>
+            <div class="img-box"><img src="assets/img/video_style/27.jpg" alt="Style 27" data-lightbox loading="lazy"></div>
             <div class="tile-label">Style</div>
           </div>
           <div class="ba-slider" style="--pos: 15%; aspect-ratio: 16 / 9;">
-            <video class="ba-after" src="assets/img/video_content/27.mp4" muted loop playsinline preload="metadata"></video>
-            <div class="ba-before-wrap"><video class="ba-before" src="assets/img/video_result/27.mp4" muted loop playsinline preload="metadata"></video></div>
+            <video class="ba-after" src="assets/img/video_content/27.mp4" muted loop playsinline preload="none"></video>
+            <div class="ba-before-wrap"><video class="ba-before" src="assets/img/video_result/27.mp4" muted loop playsinline preload="none"></video></div>
             <span class="ba-badge left">Stylized</span>
             <span class="ba-badge right">Content</span>
             <div class="ba-handle"><div class="ba-grip"><svg viewBox="0 0 24 24"><polyline points="9 6 4 12 9 18"/><polyline points="15 6 20 12 15 18"/></svg></div></div>
@@ -370,12 +370,12 @@
       <div class="gallery-item">
         <div class="ba-row">
           <div class="tile">
-            <div class="img-box"><img src="assets/img/video_style/37.jpg" alt="Style 37" data-lightbox></div>
+            <div class="img-box"><img src="assets/img/video_style/37.jpg" alt="Style 37" data-lightbox loading="lazy"></div>
             <div class="tile-label">Style</div>
           </div>
           <div class="ba-slider" style="--pos: 15%; aspect-ratio: 16 / 9;">
-            <video class="ba-after" src="assets/img/video_content/37.mp4" muted loop playsinline preload="metadata"></video>
-            <div class="ba-before-wrap"><video class="ba-before" src="assets/img/video_result/37.mp4" muted loop playsinline preload="metadata"></video></div>
+            <video class="ba-after" src="assets/img/video_content/37.mp4" muted loop playsinline preload="none"></video>
+            <div class="ba-before-wrap"><video class="ba-before" src="assets/img/video_result/37.mp4" muted loop playsinline preload="none"></video></div>
             <span class="ba-badge left">Stylized</span>
             <span class="ba-badge right">Content</span>
             <div class="ba-handle"><div class="ba-grip"><svg viewBox="0 0 24 24"><polyline points="9 6 4 12 9 18"/><polyline points="15 6 20 12 15 18"/></svg></div></div>
@@ -386,12 +386,12 @@
       <div class="gallery-item">
         <div class="ba-row">
           <div class="tile">
-            <div class="img-box"><img src="assets/img/video_style/38.jpg" alt="Style 38" data-lightbox></div>
+            <div class="img-box"><img src="assets/img/video_style/38.jpg" alt="Style 38" data-lightbox loading="lazy"></div>
             <div class="tile-label">Style</div>
           </div>
           <div class="ba-slider" style="--pos: 15%; aspect-ratio: 16 / 9;">
-            <video class="ba-after" src="assets/img/video_content/38.mp4" muted loop playsinline preload="metadata"></video>
-            <div class="ba-before-wrap"><video class="ba-before" src="assets/img/video_result/38.mp4" muted loop playsinline preload="metadata"></video></div>
+            <video class="ba-after" src="assets/img/video_content/38.mp4" muted loop playsinline preload="none"></video>
+            <div class="ba-before-wrap"><video class="ba-before" src="assets/img/video_result/38.mp4" muted loop playsinline preload="none"></video></div>
             <span class="ba-badge left">Stylized</span>
             <span class="ba-badge right">Content</span>
             <div class="ba-handle"><div class="ba-grip"><svg viewBox="0 0 24 24"><polyline points="9 6 4 12 9 18"/><polyline points="15 6 20 12 15 18"/></svg></div></div>
@@ -402,12 +402,12 @@
       <div class="gallery-item">
         <div class="ba-row">
           <div class="tile">
-            <div class="img-box"><img src="assets/img/video_style/39.jpg" alt="Style 39" data-lightbox></div>
+            <div class="img-box"><img src="assets/img/video_style/39.jpg" alt="Style 39" data-lightbox loading="lazy"></div>
             <div class="tile-label">Style</div>
           </div>
           <div class="ba-slider" style="--pos: 15%; aspect-ratio: 16 / 9;">
-            <video class="ba-after" src="assets/img/video_content/39.mp4" muted loop playsinline preload="metadata"></video>
-            <div class="ba-before-wrap"><video class="ba-before" src="assets/img/video_result/39.mp4" muted loop playsinline preload="metadata"></video></div>
+            <video class="ba-after" src="assets/img/video_content/39.mp4" muted loop playsinline preload="none"></video>
+            <div class="ba-before-wrap"><video class="ba-before" src="assets/img/video_result/39.mp4" muted loop playsinline preload="none"></video></div>
             <span class="ba-badge left">Stylized</span>
             <span class="ba-badge right">Content</span>
             <div class="ba-handle"><div class="ba-grip"><svg viewBox="0 0 24 24"><polyline points="9 6 4 12 9 18"/><polyline points="15 6 20 12 15 18"/></svg></div></div>
@@ -435,7 +435,7 @@
     </p>
 
     <div class="figure-block">
-      <img src="assets/img/Ablation Shuffle.png" alt="Semantic interference ablation study" data-lightbox>
+      <img src="assets/img/Ablation Shuffle.png" alt="Semantic interference ablation study" data-lightbox loading="lazy">
       <p class="figure-caption">
         <b>Semantic interference ablation study.</b> Row 1 (baseline): Content, Style, and PST
         results from different methods using the original unshuffled style. Rows 2–5: PST results
