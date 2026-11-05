@@ -233,7 +233,9 @@
   document.querySelectorAll('img[data-lightbox]').forEach(function (img) {
     img.addEventListener('click', function (e) {
       e.stopPropagation();
-      lbOpen(img.src);
+      // If data-lightbox-full is set, load the high-res version
+      var fullSrc = img.getAttribute('data-lightbox-full') || img.src;
+      lbOpen(fullSrc);
     });
   });
 
